@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setting up Local Environment &#8212; SLAC-OCIO DevOps Dev Processes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="SLAC-OCIO DevOps Dev Processes 0.1 documentation" href="README.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="setting-up-local-environment">
+<h1>Setting up Local Environment<a class="headerlink" href="#setting-up-local-environment" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Enable PHP in Apache</dt>
+<dd><p class="first last"><a href="#id1"><span class="problematic" id="id2">`</span></a>sudo vi /etc/apache2/httpd.conf -&gt; ‘/php’ -&gt;remove ‘#’ from in front of &#8220;LoadModule php5_module libexec/apache2/libphp5.so&#8221; `</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Restart Apache</dt>
+<dd><p class="first last"><cite>sudo apachectl restart</cite></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Download MySQL for OS-X 64bit 10.9</p>
+</li>
+</ul>
+<p><a class="reference external" href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a></p>
+<ul class="simple">
+<li>Install MySQL</li>
+<li>Open Preferences App and Open MySQL</li>
+</ul>
+<p>click start</p>
+<ul class="simple">
+<li>Download the VirtualHost script</li>
+</ul>
+<p><a class="reference external" href="https://github.com/virtualhost/virtualhost.sh">https://github.com/virtualhost/virtualhost.sh</a></p>
+<ul class="simple">
+<li>Place it in /User/yourusername/</li>
+<li>Make it an executable file</li>
+</ul>
+<p><cite>chmod +x virtualhost.sh</cite></p>
+<ul class="simple">
+<li>Run it to create a local virtual website</li>
+</ul>
+<p><cite>virtualhost.sh yoursitename</cite>
+Answer ‘y’ to the questions.</p>
+<ul class="simple">
+<li>Go to GitHub and copy your repo URL</li>
+<li>Clone that repo into your new site folder</li>
+</ul>
+<p><cite>git clone yourrepourl.git</cite></p>
+<ul class="simple">
+<li>Move those cloned files innto your site root.</li>
+</ul>
+<p>In the root of your local site: <cite>mv gitreponame/* ./</cite>
+and <cite>mv gitreponame/.* ./</cite></p>
+<ul class="simple">
+<li>If you don’t have it already, install Navicat:</li>
+</ul>
+<p><a class="reference external" href="http://navicat.com/download/navicat-for-mysql">http://navicat.com/download/navicat-for-mysql</a></p>
+<ul class="simple">
+<li>Create a connection</li>
+</ul>
+<p><a class="reference external" href="http://navicat.com/manual/online_manual/en/navicat/mac_manual/index.html">http://navicat.com/manual/online_manual/en/navicat/mac_manual/index.html</a>
+If you’ve never used MySQL on your laptop before, the root user/pass is root and a blank password.
+Please change that as soon as possible.
+Name the connection to your local connection ‘local&#8217;</p>
+<ul class="simple">
+<li>Create a Database:</li>
+</ul>
+<p>Right click on the ‘local’ connection you created earlier.
+Choose &#8216;create database&#8217;
+name your database something relevant, choose UTF8 as the default character set and UTF8_unicode_ci as the encoding</p>
+<ul class="simple">
+<li>Create a User and attach it to that database</li>
+<li>Double click the databasease you created in the step above.</li>
+<li>In the tool menu, locate the silhouette of a person.</li>
+<li>Click that once</li>
+<li>Click the ‘+’ to add a userer.</li>
+<li>For our local purposes, add a user that has the same name as the database you created earlier.</li>
+</ul>
+<p>&gt; host:127.0.0.1
+password:abc123
+- Click Save
+- Click on Object Privileges
+- Click on the ‘+’ to add an object</p>
+<blockquote>
+<div>Select the databasebase you created earlier</div></blockquote>
+<ul class="simple">
+<li>in the right pane, right click and ‘grant all&#8217;</li>
+<li>Click ‘Ok&#8217;</li>
+<li>Save.</li>
+</ul>
+<p>###Run the drush site install command
+<code class="docutils literal"><span class="pre">`drush</span> <span class="pre">si</span> <span class="pre">profilename</span> <span class="pre">--db-url=mysql://youruser:abc123&#64;127.0.0.1/yourdatabase</span> <span class="pre">--account-name=admin</span> <span class="pre">--account-pass=618hWVCDmY1n3uf</span> <span class="pre">--account-mail=admin&#64;example.com</span> <span class="pre">--site-name=yoursitename</span> <span class="pre">-y`</span></code>
+Ensure Settingthat you adjust ‘yourprofilename&#8217; ‘yoursitename&#8217;, &#8216;youruser&#8217; and ‘yourdatabase&#8217; to something relevant to the task you’re carrying out.</p>
+<ul class="simple">
+<li>Now you should be able to visit your site in a browser. Use the name you utilized with the virtualhost.sh step earlier with a trailing ‘/&#8217;</li>
+</ul>
+<p>###Upgrading a Drupal Codebase
+- Clone the repository you’re going to upgrade.
+<cite>git clone git&#64;github.com:SLACNationalAcceleratorLaboratory/slac-Settingfeatures.git</cite></p>
+<ul class="simple">
+<li>Create a branch:</li>
+</ul>
+<p><cite>git checkout -b ‘drupal-7-xx&#8217;</cite></p>
+<p>-Setting Download the newest drupal codebase.
+<a class="reference external" href="http://ftp.drupal.org/files/projects/drupal-7.xx.tar.gz">http://ftp.drupal.org/files/projects/drupal-7.xx.tar.gz</a></p>
+<ul class="simple">
+<li>Extract that archive</li>
+</ul>
+<p><cite>tar -xvzf drupal-7.xx.tar.gz</cite></p>
+<ul class="simple">
+<li>Copy the updated code to your drupal codebase</li>
+</ul>
+<p><cite>cd your/drupal/codebase/</cite>
+<cite>cp -R your/download/folder/drupal-7.xx/* ./1</cite></p>
+<ul class="simple">
+<li>Run database updates</li>
+</ul>
+<p>in your local siteroot: <cite>drush updb</cite>
+<em>Somethings may give warnings - if the whole process does not return the words ‘Upgrade Successful’, abandon and consult with the team.</em></p>
+<ul class="simple">
+<li>Test to see if anything is broken.</li>
+</ul>
+<p>Open the site locally on your dev Settingmachine. Visit each path in the main menu, looking for broken things/links.</p>
+<ul class="simple">
+<li>Add the changed files:</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">`git</span> <span class="pre">add</span> <span class="pre">CHANGELOG.txt</span> <span class="pre">INSTALL.mysql.txt</span> <span class="pre">MAINTAINERS.txt</span> <span class="pre">README.txt</span> <span class="pre">includes</span> <span class="pre">misc</span> <span class="pre">modules</span> <span class="pre">profiles</span> <span class="pre">scripts</span> <span class="pre">themes</span> <span class="pre">COPYRIGHT.txt</span> <span class="pre">INSTALL.txt</span> <span class="pre">robots.txt</span> <span class="pre">update.php</span> <span class="pre">web.config`</span></code></p>
+<ul class="simple">
+<li>Commit your changes:</li>
+</ul>
+<p><cite>git commit -m ‘Upgrade to Drupal 7.xx&#8217;</cite></p>
+<ul class="simple">
+<li>Push your branch to github:</li>
+</ul>
+<p><cite>git push origin ‘drupal-7-xx&#8217;</cite></p>
+<p>###Deploying an Upgraded Drupal Codebase</p>
+<ul class="simple">
+<li>Login to github with your credentials.</li>
+<li>Locate the repository you are going to deploy.</li>
+<li>Copy the github URL.</li>
+<li>Clone it locally and build it</li>
+</ul>
+<blockquote>
+<div>-Test it locally.</div></blockquote>
+<ul class="simple">
+<li>If all is ok, then go back to github.</li>
+<li>Locate the proper repository.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Choose the branch you’re going to deploy</li>
+<li>click the ‘pull request’ link</li>
+<li>Create a meaningful and descriptive pull request descriptiveption and title</li>
+<li>Click the very large ‘Create Pull Request” button</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Authorize the Merge</li>
+</ul>
+<p>Click the merge branches button</p>
+<ul class="simple">
+<li>log into drupal-admin01 and sudo as aegir</li>
+</ul>
+<p><cite>sudo -iu aegir</cite></p>
+<ul class="simple">
+<li>Change to the platform you will deployy on.</li>
+</ul>
+<p><cite>cd platforms/platformyouaredeploying</cite></p>
+<ul class="simple">
+<li>Pull the merged code theo this directory</li>
+</ul>
+<p><cite>git pull origin master</cite>
+- Logout of drupal admin 01
+Setting
+- Log into aegir front end
+- Locate the platform you just updated.
+- Click Verify</p>
+<ul class="simple">
+<li>Locate any sites attached to that platform</li>
+</ul>
+<p>verify all of them.</p>
+<p>You’remove Done
+<strong>Test the sites to ensure they are functioning properly</strong></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="README.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/DRUPAL_UPGRADE_PROCESS.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Vincent Flesouras.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/DRUPAL_UPGRADE_PROCESS.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
