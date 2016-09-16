@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Processing a Github Pull Request &#8212; SLAC-OCIO DevOps Dev Processes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="SLAC-OCIO DevOps Dev Processes 0.1 documentation" href="README.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="processing-a-github-pull-request">
+<h1>Processing a Github Pull Request<a class="headerlink" href="#processing-a-github-pull-request" title="Permalink to this headline">¶</a></h1>
+<p>&gt; This document covers performing a pull request, this does not cover
+&gt; the code review as that is far beyond the purview of this limited
+&gt; document to cover all of the drupal framework and php. That knowledge
+&gt; is essential to understanding the steps the vendor took and the ways
+&gt; in which they altered our environment and sites. However, it may be
+&gt; necessary at times to process a pull request. Processing pull requests
+&gt; without code reviews is risky, in that we may find ourselves with
+&gt; security problems, or unable to comprehend how or what a vendor
+&gt; completed for us.
+&gt;
+&gt; All pull requests are initiated from the github UI.</p>
+<ul class="simple">
+<li>The vendor/developer will issue a pull request.<ul>
+<li>The pull request will be present in github.  Github web UI is the safest place to process it, as they have automated tools that check if it can be automatically merged. If it can’t be automatically merged, refuse the pull request.</li>
+</ul>
+</li>
+</ul>
+<p>You can find notifications of pull requests either in email or the page you’re redirected to, after login to the github website.</p>
+<ul class="simple">
+<li>To merge click the button merge button.</li>
+<li>To decline, enter the reason for the declination and simply close the PR</li>
+<li>Once the merge is completed, login through the terminal to drupal-admin01.
+- Ensure you sudo as aegir. !!!!!DO NOT DO A PULL AS YOUR USER!!!!!  sudo -iu aegir</li>
+</ul>
+<blockquote>
+<div>Switch to the directory that contains the platform you’re updating with new code with.</div></blockquote>
+<p>run git status:  This will print the current branch you’re on.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Ensure you have sudo’d as aegir!</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><cite>git pull origin yourbranchname</cite></li>
+<li>Switch to aegir UI (aegir.slac.stanford.edu)
+- Select the platform you’re updating and verify it.
+- Once that is successful, select the sites and verify them.</li>
+<li>Once verify is complete, go back to the command line, in drupal-admin01</li>
+<li>In each site directory you will run the following commands utilizing the drush alias.</li>
+<li><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>updb -y</li>
+</ul>
+<p>fra -y
+fra -y
+fl
+cc all```
+- <em>Preface each of those commands with ‘drush &#64;sitealias ….`</em></p>
+<p><em>When running the ‘fl’ command ensure that the state listed for each feature is empty. If it says overridden, then you must run fra (Features Revert All) until it no longer says overridden. If it keeps doing so, alert the vendor.</em></p>
+<ul class="simple">
+<li>All of the code and features should be ready on the various sites.  Make sure to clear caches (drush &#64;sitealias cc all) This effectively restarts the site.</li>
+<li>Test each site you have updated.</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="README.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/VENDOR_PR.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Vincent Flesouras.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/VENDOR_PR.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
