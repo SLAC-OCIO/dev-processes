@@ -1,0 +1,15 @@
+site_name: SLAC OCIO DevOps/Developer Documentation
+pages:
+  - [index.md, 'Home']
+  - [drupal-overview.md,'Drupal', 'Overview of Drupal at SLAC']
+  - [mamp-linux.md, Drupal', 'Local Development of Drupal']
+  - [grail.md, 'Drupal', 'OS-X Development Machine Configuration']
+  - [COMS_GIT.md, 'Drupal', 'Communications <---> Dev Processes']
+  - [ocio-dev.md, 'CoreTeam', 'Overview of Drupal for DevOps Team']
+  - [VENDOR_PR.md,'CoreTeam', 'Deployment of Vendor Pull Request']
+  - [VENDOR_DEPLOY.md,'CoreTeam', 'Deployment of Production from Vendor']
+theme: readthedocs
+site_author: "Vincent Flesouras"
+repo_url: https://github.com/SLAC-OCIO/dev-processes
+include_search: true
+#use_directory_urls: false
