@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Vincent Flesouras">
+  
+  <title>Deployment of Vendor Pull Request - SLAC OCIO DevOps/Developer Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Deployment of Vendor Pull Request";
+    var mkdocs_page_input_path = "core-team/VENDOR_PR.md";
+    var mkdocs_page_url = "/core-team/VENDOR_PR/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> SLAC OCIO DevOps/Developer Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Drupal</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/drupal-overview/">Overview of Drupal at SLAC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/mamp-linux/">Local Development of Drupal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/grail/">OS-X Development Machine Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/COMS_GIT/">Communications <---> Dev Processes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/slac_sites/">Up and Running with SLAC Sites</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core Team</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../overview/">Overview of Drupal for DevOps Team</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Deployment of Vendor Pull Request</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#processing-a-github-pull-request">Processing a Github Pull Request</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../VENDOR_DEPLOY/">Deployment of Production from Vendor</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">SLAC OCIO DevOps/Developer Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Core Team &raquo;</li>
+        
+      
+    
+    <li>Deployment of Vendor Pull Request</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="processing-a-github-pull-request">Processing a Github Pull Request</h2>
+<blockquote>
+<p>This document covers performing a pull request, this does not cover
+the code review as that is far beyond the purview of this limited
+document to cover all of the drupal framework and php. That knowledge
+is essential to understanding the steps the vendor took and the ways
+in which they altered our environment and sites. However, it may be
+necessary at times to process a pull request. Processing pull requests
+without code reviews is risky, in that we may find ourselves with
+security problems, or unable to comprehend how or what a vendor
+completed for us.</p>
+<p>All pull requests are initiated from the github UI.</p>
+</blockquote>
+<ul>
+<li>
+<p>The vendor/developer will issue a pull request.</p>
+</li>
+<li>
+<p>The pull request will be present in github.  Github web UI is the safest place to process it, as they have automated tools that check if it can be automatically merged. If it can’t be automatically merged, refuse the pull request.
+You can find notifications of pull requests either in email or the page you’re redirected to, after login to the github website.</p>
+</li>
+<li>
+<p>To merge click the button merge button.</p>
+</li>
+<li>
+<p>To decline, enter the reason for the declination and simply close the PR</p>
+</li>
+<li>
+<p>Once the merge is completed, login through the terminal to drupal-admin01.</p>
+</li>
+<li>
+<p>Ensure you sudo as aegir. !!!!!DO NOT DO A PULL AS YOUR USER!!!!!  sudo -iu aegir
+ Switch to the directory that contains the platform you’re updating with new code with.
+run git status:  This will print the current branch you’re on.</p>
+</li>
+<li>
+<p>Ensure you have sudo’d as aegir!</p>
+</li>
+<li>
+<p><code>git pull origin yourbranchname</code></p>
+</li>
+<li>
+<p>Switch to aegir UI (aegir.slac.stanford.edu)</p>
+</li>
+<li>Select the platform you’re updating and verify it.</li>
+<li>
+<p>Once that is successful, select the sites and verify them.</p>
+</li>
+<li>
+<p>Once verify is complete, go back to the command line, in drupal-admin01</p>
+</li>
+<li>
+<p>In each site directory you will run the following commands utilizing the drush alias.</p>
+</li>
+<li><code>updb -y
+fra -y
+fra -y
+fl
+cc all</code></li>
+<li><em>Preface each of those commands with ‘drush @sitealias ….`</em></li>
+</ul>
+<p><em>When running the ‘fl’ command ensure that the state listed for each feature is empty. If it says overridden, then you must run fra (Features Revert All) until it no longer says overridden. If it keeps doing so, alert the vendor.</em></p>
+<ul>
+<li>
+<p>All of the code and features should be ready on the various sites.  Make sure to clear caches (drush @sitealias cc all) This effectively restarts the site.</p>
+</li>
+<li>
+<p>Test each site you have updated.</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../VENDOR_DEPLOY/" class="btn btn-neutral float-right" title="Deployment of Production from Vendor">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../overview/" class="btn btn-neutral" title="Overview of Drupal for DevOps Team"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../VENDOR_DEPLOY/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

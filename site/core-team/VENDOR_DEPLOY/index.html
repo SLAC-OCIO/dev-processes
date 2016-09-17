@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Vincent Flesouras">
+  
+  <title>Deployment of Production from Vendor - SLAC OCIO DevOps/Developer Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Deployment of Production from Vendor";
+    var mkdocs_page_input_path = "core-team/VENDOR_DEPLOY.md";
+    var mkdocs_page_url = "/core-team/VENDOR_DEPLOY/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> SLAC OCIO DevOps/Developer Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Drupal</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/drupal-overview/">Overview of Drupal at SLAC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/mamp-linux/">Local Development of Drupal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/grail/">OS-X Development Machine Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/COMS_GIT/">Communications <---> Dev Processes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../drupal/slac_sites/">Up and Running with SLAC Sites</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core Team</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../overview/">Overview of Drupal for DevOps Team</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../VENDOR_PR/">Deployment of Vendor Pull Request</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Deployment of Production from Vendor</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#vendor-delivered-pull-request-and-deployment">Vendor delivered Pull request and deployment</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">SLAC OCIO DevOps/Developer Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Core Team &raquo;</li>
+        
+      
+    
+    <li>Deployment of Production from Vendor</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vendor-delivered-pull-request-and-deployment">Vendor delivered Pull request and deployment</h1>
+<blockquote>
+<p>When working with an external vendor, the following process has been tested and found to be very effective and eliminate many issues in the deployment pipeline.  With SLAC's Aegir deployment mechanism, the process is very simple, just follow the steps below.</p>
+</blockquote>
+<ul>
+<li>Vendor initiates a pull request.</li>
+<li>Login to github, review pull request.</li>
+<li>
+<p>This entails looking over the code, to ensure there is nothing that violates our security standards, or will have a negative impact on our platforms.</p>
+</li>
+<li>
+<p>Merge pull request by logging into drupal-admin01, changing directories to the appropriate platform/site directory. git pull origin branchname.</p>
+</li>
+<li>
+<p>Switch to Aegir UI, verify the platfrom.</p>
+</li>
+<li>Verify each site in the platform.</li>
+<li>Run database updates for each site.</li>
+<li>Run features updates for each site.</li>
+<li>
+<p>Run cache clear for each site.​</p>
+</li>
+<li>
+<p>Import prod database.</p>
+</li>
+<li><code>drush sql-cli &lt; ~/path/to/filename.sql</code></li>
+<li>Review pull request in github.</li>
+<li>If there are conflicts in the pull request, do not proceed to step 2.Vendor Alert the developer.</li>
+<li>Process the pull request and merge with the codedebase in the proper branch</li>
+<li>SSH into drupal admin01 and change directory to the proper platform folder</li>
+<li>kinit on login <code>/usr/local/bin/kinit</code></li>
+<li>Change user to Aegir and kinit again</li>
+<li><code>sudo su - aegir</code></li>
+<li><code>/usr/local/bin/kinit yourusername</code></li>
+<li>Discover and verify your branch</li>
+<li>git status'  -tells you the correct branch (precaution</li>
+<li>Retrieve the newest code <ul>
+<li><code>git pull origin branchname</code></li>
+</ul>
+</li>
+<li>Log into aegir UI - click on the platform you are updating.</li>
+<li>verify platform</li>
+<li>verify sites</li>
+<li>Obtain the AFS directory numbers from each sites detail page in Aegir</li>
+<li>Back to the command line - <ul>
+<li>Copy the files from the old drupal 6 site
+ <code>rsync -rave “ssh” youruser@drupal02.slac.stanford.edu:/u1/www/html/sites/default/files/ /afs/slac.stanford.edu/g/web/drupal/xxxx/files/</code></li>
+</ul>
+</li>
+<li>Change the file permissions to the correct schema </li>
+<li>changingmod o+w *</li>
+<li>Update Database</li>
+<li>drush updb -y</li>
+<li>Revert Features</li>
+<li>drush fra -y</li>
+<li>drush fra -y</li>
+<li>drush cc all</li>
+<li>drush fl</li>
+<li>Report back to verifyndor that the steps necessary have been performed on SLAC’s side</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../VENDOR_PR/" class="btn btn-neutral" title="Deployment of Vendor Pull Request"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../VENDOR_PR/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

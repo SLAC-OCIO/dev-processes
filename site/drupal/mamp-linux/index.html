@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Vincent Flesouras">
+  
+  <title>Local Development of Drupal - SLAC OCIO DevOps/Developer Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Local Development of Drupal";
+    var mkdocs_page_input_path = "drupal/mamp-linux.md";
+    var mkdocs_page_url = "/drupal/mamp-linux/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> SLAC OCIO DevOps/Developer Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Drupal</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../drupal-overview/">Overview of Drupal at SLAC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Local Development of Drupal</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#step-oneinstall-apache">Step One—Install Apache</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#how-to-find-your-servers-ip-address">How to Find your Server’s IP address</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#step-twoinstall-mysql">Step Two—Install MySQL</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#step-threeinstall-php">Step Three—Install PHP</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#step-fourresults-see-php-on-your-server">Step Four—RESULTS: See PHP on your Server</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../grail/">OS-X Development Machine Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../COMS_GIT/">Communications <---> Dev Processes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../slac_sites/">Up and Running with SLAC Sites</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core Team</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core-team/overview/">Overview of Drupal for DevOps Team</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core-team/VENDOR_PR/">Deployment of Vendor Pull Request</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core-team/VENDOR_DEPLOY/">Deployment of Production from Vendor</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">SLAC OCIO DevOps/Developer Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Drupal &raquo;</li>
+        
+      
+    
+    <li>Local Development of Drupal</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Before running through the steps of this tutorial, make sure that all of your repositories are up to date:</p>
+<pre>apt-get update</pre>
+
+<p>With that completed, go ahead and start installing the LAMP server.</p>
+<h2 id="step-oneinstall-apache">Step One—Install Apache</h2>
+<p>Apache is a free open source software which runs over 50% of the world’s web servers.</p>
+<p>To install apache, open terminal and type in these commands:</p>
+<pre>apt-get install apache2</pre>
+
+<p>That’s it. To check if Apache is installed on your VPS, direct your browser to your server’s IP address (eg. http://12.34.56.789). The page should display the words “It works!" like <a href="https://assets.digitalocean.com/tutorial_images/333VJ.png">this</a>.</p>
+<h2 id="how-to-find-your-servers-ip-address">How to Find your Server’s IP address</h2>
+<p>You can run the following command to reveal your VPS's IP address.</p>
+<pre>ifconfig eth0 | grep inet | awk '{ print $2 }'</pre>
+
+<h2 id="step-twoinstall-mysql">Step Two—Install MySQL</h2>
+<p>MySQL is a widely-deployed database management system used for organizing and retrieving data.</p>
+<p>To install MySQL, open terminal and type in these commands:</p>
+<pre>apt-get install mysql-server</pre>
+
+<p>During the installation, MySQL will ask you to set a root password. If you miss the chance to set the password while the program is installing, it is very easy to set the password later from within the MySQL shell.</p>
+<p>Finish up by running the MySQL set up script:</p>
+<pre> mysql_secure_installation</pre>
+
+<p>The prompt will ask you for your current root password.</p>
+<p>Type it in.</p>
+<pre>Enter current password for root (enter for none): 
+OK, successfully used password, moving on...</pre>
+
+<p>Then the prompt will ask you if you want to change the root password. Go ahead and choose N and move on to the next steps.</p>
+<p>It’s easiest just to say Yes to all the options. At the end, MySQL will reload and implement the new changes.</p>
+<pre>By default, a MySQL installation has an anonymous user, allowing anyone
+to log into MySQL without having to have a user account created for
+them.  This is intended only for testing, and to make the installation
+go a bit smoother.  You should remove them before moving into a
+production environment.
+
+Remove anonymous users? [Y/n] y                                            
+ ... Success!
+
+Normally, root should only be allowed to connect from 'localhost'.  This
+ensures that someone cannot guess at the root password from the network.
+
+Disallow root login remotely? [Y/n] y
+... Success!
+
+By default, MySQL comes with a database named 'test' that anyone can
+access.  This is also intended only for testing, and should be removed
+before moving into a production environment.
+
+Remove test database and access to it? [Y/n] y
+ - Dropping test database...
+ ... Success!
+ - Removing privileges on test database...
+ ... Success!
+
+Reloading the privilege tables will ensure that all changes made so far
+will take effect immediately.
+
+Reload privilege tables now? [Y/n] y
+ ... Success!
+
+Cleaning up...</pre>
+
+<p>Once you're done with that you can finish up by installing PHP on your virtual server.</p>
+<h2 id="step-threeinstall-php">Step Three—Install PHP</h2>
+<p>PHP is an open source web scripting language that is widely use to build dynamic webpages.</p>
+<p>To install PHP, open terminal and type in this command. <strong>Note:</strong> If you are on a version earlier than Debian 7, include php5-suhosin as well.</p>
+<pre> apt-get install php5 php-pear php5-mysql</pre>
+
+<p>After you answer yes to the prompt twice, PHP will install itself.</p>
+<p>Finish up by restarting apache:</p>
+<pre>service apache2 restart</pre>
+
+<p>Congratulations! You now have LAMP stack on your linux machine!</p>
+<h2 id="step-fourresults-see-php-on-your-server">Step Four—RESULTS: See PHP on your Server</h2>
+<p>Although LAMP is installed, we can still take a look and see the components online by creating a quick php info page</p>
+<p>To set this up, first create a new file:</p>
+<pre> nano /var/www/info.php</pre>
+
+<p>Add in the following line:</p>
+<pre><?php
+phpinfo();
+?></pre>
+
+<p>Then Save and Exit.</p>
+<p>Finish up by visiting your php info page (make sure you replace the example ip address with your correct one): http://127.0.0.1/info.php</p>
+<p>It should look something like this:</p>
+<p><img alt="" src="https://assets.digitalocean.com/tutorial_images/Zs7of.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../grail/" class="btn btn-neutral float-right" title="OS-X Development Machine Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../drupal-overview/" class="btn btn-neutral" title="Overview of Drupal at SLAC"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../drupal-overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../grail/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

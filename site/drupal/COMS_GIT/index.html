@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Vincent Flesouras">
+  
+  <title>Communications <---> Dev Processes - SLAC OCIO DevOps/Developer Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Communications <---> Dev Processes";
+    var mkdocs_page_input_path = "drupal/COMS_GIT.md";
+    var mkdocs_page_url = "/drupal/COMS_GIT/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> SLAC OCIO DevOps/Developer Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Drupal</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../drupal-overview/">Overview of Drupal at SLAC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../mamp-linux/">Local Development of Drupal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../grail/">OS-X Development Machine Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Communications <---> Dev Processes</a>
+        
+            <ul>
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../slac_sites/">Up and Running with SLAC Sites</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core Team</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core-team/overview/">Overview of Drupal for DevOps Team</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core-team/VENDOR_PR/">Deployment of Vendor Pull Request</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../core-team/VENDOR_DEPLOY/">Deployment of Production from Vendor</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">SLAC OCIO DevOps/Developer Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Drupal &raquo;</li>
+        
+      
+    
+    <li>Communications <---> Dev Processes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>requirements</strong>
+     - ssh-keys
+     - Github account
+     - Mac or Linux computer
+     - sudo or 'administrator' privileges
+     - 20 GB of free Hard Disk space</p>
+<p><strong>General Steps</strong></p>
+<ul>
+<li>Setup your local machine to develop in the MAMP 'stack' - Mac Apache MySQL PHP (One time process) Document forthcoming, or use Grail if OS-X</li>
+<li>Get code location - Github Repository URL</li>
+<li>Pull code to your machine - Git Pull</li>
+<li>Create 'sandbox' - Git branch</li>
+<li>Modify your code</li>
+<li>Stage your code - Git add</li>
+<li>Push your code to Github - Git push</li>
+<li>Request Deployment - Service Now</li>
+<li>Test</li>
+<li>Request Merge via Pull Request - Github Interface</li>
+<li>Fetch all Changes, Switch branch back to master - Git fetch</li>
+</ul>
+<p><strong>ssh keys</strong></p>
+<ul>
+<li>Generate your Key: https://help.github.com/articles/generating-an-ssh-key/</li>
+<li>Install your Pub Key in github:https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/</li>
+</ul>
+<p><strong>Github Account</strong></p>
+<ul>
+<li>Obtain a github account by signing up, it is free.</li>
+<li>Via Service Now - request having your user added to SLAC-OCIO Github</li>
+<li>Ensure that your ssh public key is configured in Github</li>
+</ul>
+<p><strong>Obtain the repository url eg: (git@github.com/SLAC-OCIO/slac-features.git)</strong></p>
+<ul>
+<li>Log into Github.</li>
+<li>Open the SLAC-OCIO organization from the Org Dropdown. Located in the upper left of the webpage, under the picture of the "Octokitty"</li>
+<li>Browse through the available repositories until you find the one you want.  You can use the Search Bar, located above the Organization dropdown and next to the "Octokitty"</li>
+<li>Click on the title of the Github repository you wish to work on.</li>
+<li>Click the green "Clone or Download" button in the upper right area of the webpage.</li>
+<li>Select "SSH" by clicking on the word</li>
+<li>Copy the URL to your clipboard</li>
+</ul>
+<p><strong>Pull code to your machine</strong></p>
+<ul>
+<li>Open the terminal application (command+space, type terminal, enter)
+    On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)</li>
+<li>Change directories to your sandbox website [cd ~/sites/]</li>
+<li>
+<p>Clone your repository: <code>git clone git@github.com:SLAC-OCIO/slac-features.git</code></p>
+</li>
+<li>
+<p>Change directory to your new codebase: cd  ~/sites/slac-features</p>
+</li>
+</ul>
+<p><strong>Create your Sandbox</strong></p>
+<ul>
+<li>Create a branch of the main tree to change code in: <code>git checkout -b yourbranchname</code></li>
+<li>Ensure you're on the correct branch <code>git status</code></li>
+</ul>
+<p><strong>Modify your code</strong>
+Code, Create!, Be happy, Don't forget the semi-colon!</p>
+<p><strong>Stage your code</strong></p>
+<ul>
+<li>Open the terminal application (command+space, type terminal, or type iTerm, hit enter)</li>
+<li>Change directories to your sandbox website [cd ~/sites/slac-features]</li>
+<li>Look at the needed changes: <code>git status</code>  Likely, you'll see a listing of files, some will be added, some deleted, some modified. Some will be in the "Untracked Files" section, we do not want to add these.</li>
+<li>Add everything in the list above untracked files.  You may add an entire folder, like:<ul>
+<li><code>git add sites/all/themes/slac/_sass/</code></li>
+</ul>
+</li>
+<li>Once your files are staged for upload, you'll create a commit message<ul>
+<li><code>git commit -m "I added padding to the new news block"</code></li>
+</ul>
+</li>
+</ul>
+<p><strong> Push your code to Github </strong></p>
+<ul>
+<li>Open the terminal application (command+space, type terminal, enter)</li>
+<li>Change directories to your sandbox website [cd ~/sites/slac-features]</li>
+<li>Ensure you're on the correct branch: <code>git status -v -a</code></li>
+<li>Push your code to the central repository in the cloud: <code>git push origin yourbranchname</code></li>
+<li>Ensure you have the latest changes in your local filesystem: <code>git fetch</code> then <code>git pull master</code></li>
+</ul>
+<p><strong><em>Request Deployment to Staging</em></strong></p>
+<ul>
+<li>Open Service now, select Service Catalog</li>
+<li>Select Other Request, in the title, preface with [github staging]</li>
+<li>Submit</li>
+</ul>
+<p><strong><em>Request merge via pull request</em></strong></p>
+<ul>
+<li>Log into Github.</li>
+<li>Open the SLAC-OCIO organization from the Org select list. Located in the upper left of the webpage, under the picture of the "Octokitty"</li>
+<li>Browse through the available repositories until you find the one you want.  You can use the Search Bar, located above the Organization dropdown and next to the "Octokitty"</li>
+<li>Click on the title of the Github repository you wish to work on.</li>
+<li>Click the "Branch" select menu</li>
+<li>Chose the branch you're working with, click it.</li>
+<li>In the branch commit status bar (blue background) select 'Pull request"</li>
+<li>In the comment field, write short synopsis of the changes you have made to the code</li>
+<li>Click on 'Create Pull Request' button, when finished with your synopsis</li>
+</ul>
+<p><strong><em>Fetch all changes to your local filesystem</em></strong></p>
+<ul>
+<li>Open the terminal application (command+space, type terminal, or type iTerm, hit enter)
+    On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)</li>
+<li>Change directories to your sandbox website [cd ~/sites/slac-features]</li>
+<li>Fetch the changes: <code>git fetch</code></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../slac_sites/" class="btn btn-neutral float-right" title="Up and Running with SLAC Sites">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../grail/" class="btn btn-neutral" title="OS-X Development Machine Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SLAC-OCIO/dev-processes" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../grail/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../slac_sites/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

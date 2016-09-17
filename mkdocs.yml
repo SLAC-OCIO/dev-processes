@@ -12,6 +12,7 @@ pages:
     - 'Local Development of Drupal': 'drupal/mamp-linux.md'
     - 'OS-X Development Machine Configuration': 'drupal/grail.md'
     - 'Communications <---> Dev Processes': 'drupal/COMS_GIT.md'
+    - 'Up and Running with SLAC Sites': 'drupal/slac_sites.md'
   - Core Team:
     - 'Overview of Drupal for DevOps Team':  'core-team/overview.md'
     - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'
