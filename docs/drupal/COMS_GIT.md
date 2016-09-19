@@ -1,7 +1,9 @@
-Process:
---------
+Development: SLAC-OCIO and You
+=========
 
-  **requirements**
+[TOC]
+
+  ##requirements##
      - ssh-keys
      - Github account
      - Mac or Linux computer
@@ -9,7 +11,7 @@ Process:
      - 20 GB of free Hard Disk space
 
 
-  **General Steps**
+  ##General Steps##
 
 -      Setup your local machine to develop in the MAMP 'stack' - Mac Apache MySQL PHP (One time process) Document forthcoming, or use Grail if OS-X
 -      Get code location - Github Repository URL
@@ -23,18 +25,26 @@ Process:
 -      Request Merge via Pull Request - Github Interface
 -      Fetch all Changes, Switch branch back to master - Git fetch
 
-**ssh keys**
+##Local Development Machine Configuration##
 
-- Generate your Key: https://help.github.com/articles/generating-an-ssh-key/
-- Install your Pub Key in github:https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+###OS-X###
+ **Please** see [this guide](http://slac-ocio-dev-processes.readthedocs.io/en/latest/drupal/grail/) for setting up a Mac to develope SLAC-Drupal
 
-**Github Account**
+###Github Account###
 
 - Obtain a github account by signing up, it is free.
 - Via Service Now - request having your user added to SLAC-OCIO Github
 - Ensure that your ssh public key is configured in Github
 
-**Obtain the repository url eg: (git@github.com/SLAC-OCIO/slac-features.git)**
+###ssh keys###
+
+- Generate your Key: [github how-to](https://help.github.com/articles/generating-an-ssh-key/)
+- Install your Pub Key in github: [githib how-to](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+
+
+##Making Magic: Let's code##
+
+###Obtain the repository url eg: (git@github.com/SLAC-OCIO/slac-features.git)###
 
 - Log into Github.
 - Open the SLAC-OCIO organization from the Org Dropdown. Located in the upper left of the webpage, under the picture of the "Octokitty"
@@ -44,7 +54,7 @@ Process:
 - Select "SSH" by clicking on the word
 - Copy the URL to your clipboard
 
-**Pull code to your machine**
+###Pull code to your machine###
 
 - Open the terminal application (command+space, type terminal, enter)
 	On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)
@@ -53,15 +63,15 @@ Process:
 
 - Change directory to your new codebase: cd  ~/sites/slac-features
 
-**Create your Sandbox**
+###Create your Sandbox###
 
 - Create a branch of the main tree to change code in: ```git checkout -b yourbranchname```
 - Ensure you're on the correct branch ```git status```
 
-**Modify your code**
+###Modify your code###
 Code, Create!, Be happy, Don't forget the semi-colon!
 
-**Stage your code**
+###Stage your code###
 
 - Open the terminal application (command+space, type terminal, or type iTerm, hit enter)
 - Change directories to your sandbox website [cd ~/sites/slac-features]
@@ -71,7 +81,7 @@ Code, Create!, Be happy, Don't forget the semi-colon!
 - Once your files are staged for upload, you'll create a commit message
     - `git commit -m "I added padding to the new news block"`
 
-** Push your code to Github **
+### Push your code to Github ###
 
 - Open the terminal application (command+space, type terminal, enter)
 - Change directories to your sandbox website [cd ~/sites/slac-features]
@@ -79,13 +89,13 @@ Code, Create!, Be happy, Don't forget the semi-colon!
 - Push your code to the central repository in the cloud: `git push origin yourbranchname`
 - Ensure you have the latest changes in your local filesystem: `git fetch` then `git pull master`
 
-***Request Deployment to Staging***
+###Request Deployment to Staging###
 
 - Open Service now, select Service Catalog
 - Select Other Request, in the title, preface with [github staging]
 - Submit
 
-***Request merge via pull request***
+###Request merge via pull request###
 
 - Log into Github.
 - Open the SLAC-OCIO organization from the Org select list. Located in the upper left of the webpage, under the picture of the "Octokitty"
@@ -97,9 +107,14 @@ Code, Create!, Be happy, Don't forget the semi-colon!
 - In the comment field, write short synopsis of the changes you have made to the code
 - Click on 'Create Pull Request' button, when finished with your synopsis
 
-***Fetch all changes to your local filesystem***
+###Fetch all changes to your local filesystem###
 
 - Open the terminal application (command+space, type terminal, or type iTerm, hit enter)
 	On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)
 - Change directories to your sandbox website [cd ~/sites/slac-features]
 - Fetch the changes: ```git fetch```
+
+
+TODO:
+- Blurb on Drupal best practices.
+- links to Compass and Susyone docs

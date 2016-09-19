@@ -1,4 +1,6 @@
-# Grail
+Grail
+=======
+
 Grail makes it easier to get started with a new Mac, or spruce up your current one.  It uses Ansible, Superlumic, Python and Git to pull together the apps, programs and libraries necessary to do application developement and System Administration on OS-X.
 
   - Base packages for Python, Ruby, PHP, BASH enhancements, OS-X enhancments
@@ -6,22 +8,22 @@ Grail makes it easier to get started with a new Mac, or spruce up your current o
   - The Drupal version includes compass and susyone
    
   
-## Requirements
+##Requirements
  - OS-X 10.10 (Yosemite)  or
  - OS-X 10-11 (El Capitan)
  - Internet Connection
  - The ability to manage system level packages on your mac (sudo)
 
-## Profiles
+##Profiles
 There are three profiles that can be utilized
   - All - A standard set of applications for a new Mac
   - Developer - An enhanced set of applications for common development uses
   - Drupal - An all encompassing platform, designed to get the Drupal development Neophyte to the point of writing code and site-building
 
-## Runtime
+##Runtime
 On a 2011 MacMini (Intel i5 dual-core) with 8GB of memory and a solid state drive, sitting on the fastest internet there is, this took 45 minutes to complete.  Your millage may vary. 
 
-## Usage
+##Usage
 To utilize the package open a terminal app:
 
 Click Finder -> in the Location bar at the top of your screen, click go -> click Applications -> Utilities -> Terminal
