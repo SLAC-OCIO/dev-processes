@@ -1,19 +1,16 @@
 Development: SLAC-OCIO and You
 ==================================
 
-[TOC]
 
+##Requirements
 
-  ##requirements##
+   - ssh-keys
+   - Github account
+   - Mac or Linux computer
+   - sudo or 'administrator' privileges
+   - 20 GB of free Hard Disk space
 
-     - ssh-keys
-     - Github account
-     - Mac or Linux computer
-     - sudo or 'administrator' privileges
-     - 20 GB of free Hard Disk space
-
-
-  ##General Steps##
+##General Steps
 
 -      Setup your local machine to develop in the MAMP 'stack' - Mac Apache MySQL PHP (One time process) Document forthcoming, or use Grail if OS-X
 -      Get code location - Github Repository URL
@@ -27,10 +24,17 @@ Development: SLAC-OCIO and You
 -      Request Merge via Pull Request - Github Interface
 -      Fetch all Changes, Switch branch back to master - Git fetch
 
+
+----------
+
+
 ##Local Development Machine Configuration##
 
 ###OS-X###
- **Please** see [this guide](http://slac-ocio-dev-processes.readthedocs.io/en/latest/drupal/grail/) for setting up a Mac to develope SLAC-Drupal
+ **Please** see [this guide](http://slac-ocio-dev-processes.readthedocs.io/en/latest/drupal/grail/) for setting up a Mac to develop SLAC-Drupal.
+
+###Linux
+**Please** see [this guide](http://slac-ocio-dev-processes.readthedocs.io/en/latest/drupal/mamp-linux/) for setting up a Linux computer to develop SLAC-Drupal.
 
 ###Github Account###
 
@@ -59,7 +63,7 @@ Development: SLAC-OCIO and You
 ###Pull code to your machine###
 
 - Open the terminal application (command+space, type terminal, enter)
-	On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)
+  On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)
 - Change directories to your sandbox website [cd ~/sites/]
 - Clone your repository: `git clone git@github.com:SLAC-OCIO/slac-features.git`
 
@@ -112,7 +116,7 @@ Code, Create!, Be happy, Don't forget the semi-colon!
 ###Fetch all changes to your local filesystem###
 
 - Open the terminal application (command+space, type terminal, or type iTerm, hit enter)
-	On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)
+  On OS X, the Terminal application can be found in /Applications/Utilities. Open a Finder window and go to Applications, then Utilities. Then double click on Terminal. (Or, click the spotlight icon in the upper right hand corner of your screen and type Terminal – you should see Terminal under Applications.)
 - Change directories to your sandbox website [cd ~/sites/slac-features]
 - Fetch the changes: ```git fetch```
 
@@ -120,3 +124,5 @@ Code, Create!, Be happy, Don't forget the semi-colon!
 TODO:
   - Blurb on Drupal best practices.
   - links to Compass and Susyone docs
+
+  [TOC]

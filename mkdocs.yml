@@ -11,7 +11,7 @@ pages:
     - 'About this Documentation': 'about/meta.md'
   - Drupal: 
     - 'Overview of Drupal at SLAC': 'drupal/drupal-overview.md'
-    - 'Local Development of Drupal': 'drupal/mamp-linux.md'
+    - 'Linux Development Machine Configuration': 'drupal/mamp-linux.md'
     - 'OS-X Development Machine Configuration': 'drupal/grail.md'
     - 'Communications <---> Dev Processes': 'drupal/COMS_GIT.md'
     - 'Up and Running with SLAC Sites': 'drupal/slac_sites.md'
