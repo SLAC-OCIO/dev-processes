@@ -2,13 +2,88 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to the SLAC OCIO DevOps Documentation Project\n\n\n\n\nusing the navigation to the left, you can become better aquainted with best practices, structure, coding conventions and more.", 
+            "text": "Welcome to the SLAC OCIO DevOps Documentation Project\n\n\n\n\nusing the navigation to the left, you can become better aquainted with best practices, structure, coding conventions and more.\n\n\n\n\nBe sure to read the About section for the process of adding to this documentation.", 
             "title": "Home"
         }, 
         {
             "location": "/#welcome-to-the-slac-ocio-devops-documentation-project", 
-            "text": "using the navigation to the left, you can become better aquainted with best practices, structure, coding conventions and more.", 
+            "text": "using the navigation to the left, you can become better aquainted with best practices, structure, coding conventions and more.   Be sure to read the About section for the process of adding to this documentation.", 
             "title": "Welcome to the SLAC OCIO DevOps Documentation Project"
+        }, 
+        {
+            "location": "/about/meta/", 
+            "text": "Meta Documentation\n\n\nDocumentation about the Documentation\n\n\n:laughing:  \n\n\nThis set of documentation exists to promote a transparent and always available set of guides for developing, editing and improving the development of software in OCIO. This documentations' source code is available at\nhttps://github.com/SLAC-OCIO/dev-processes\n\n\nIf you're a member of the SLAC-OCIO Github organization, you can access and edit this documentation. We welcome all pull requests, subject to review.  \n\n\n\n\nOrganization\n\n\nThe documentation set (dset) is organized according to subject. The syntax of the documentation is Markdown, particularly \nGithub Markdown\n.\n\n\n\n\nNote:\n\n\n\n\nLocation of the code repository: \nSLAC OCIO Github\n \n\n\nRequest Access: \nService Now\n\n\n\n\n\n\n Repository Structure\n\n\nIn the \ndocumentation repository\n there is a folder labeled 'Docs'\nThis is the primary folder for storing documentation files. In that folder are several others.  Each folder refers to a high-level topic or team.\n\n\n\n\n - docs\n\n\n\n\n core-team\n    \n \n - DRUPAL_UPGRADE_PROCESS.md\n    \n \n - VENDOR_DEPLOY.md\n    \n \n - VENDOR_PR.md\n    \n \n - overview.md\n\n\n drupal\n\n\n\n\n - COMS_GIT.md\n\n - drupal-overview.md\n\n - grail.md\n\n - mamp-linux.md\n\n - slac_sites.md\n\n\n\n\n\n\n\n\nDocumentation Creation and Editing Process\n\n\n Create a document\n\n\n\n\nClone the repository, locally.\n\n\nCreate a new branch with the appropriate branch name. and switch to it.\n\n\nIf you are adding a new subject, or team, create a new directory in the \ndocs\n folder\n\n\nIf you are adding a new page to the current dset, be sure to create the page in the appropriate folder, and that the file suffix is \n.md\n and the file is written with proper Markdown syntax.\n\n\n\n\nOnce you have finished editing, create a commit message with a summary of your changes and push your changes remotely.\n\n\n Edit  existing document\n\n\nIf you find mistakes, errors or something missing, you can edit any document in the repository.\n\n\n\n\nClone the repository, locally.\n\n\nCreate a new branch with the appropriate branch name. and switch to it.\n\n\nOpen the document in your preferred editor.\n\n\nMake appropriate edits using Markdown syntax.\n\n\nSave your document\n\n\nStage your changes\n\n\nCommit your changes, with a summary of the changes you made, or the subject you edited.\n\n\nPush your branch to GitHub\n\n\nLogin to Github, and issue a pull request.\n\n\n\n\n Rename a document\n\n\nGenerally, the name doesn't matter - since we're using readthedocs.io, the structure is maintained via the yaml file in the root directory of the repository. If you do rename follow the steps in Edit existing document.\n\n\n Delete a document\n\n\nYou can delete documents but it is generally advised to restructure or edit them instead. If documents are deleted that should be there, OCIO-Leads will restore it.\n\n\n\n\nTools\n\n\nAt the very least the following tools are needed:\n\n\n\n\ngit\n installed locally \n\n\nA text editor, in ascii mode. \n\n\nA modern web browser\n\n\n\n\n\n\nNote:\n\n\n\n\nA great Git UI application called \nGitKraken\n is available.  It has a pleasant and intuitive UI, simplifies most operations and can perform pull request through Github. There is a no-cost version and a pro version.\n\n\nFor assistance with Git installation please see \nGithubs Article on Git installation\n\n\nMost code editors can edit markdown. Popular text editors include \nAtom\n, \nSublime Text\n, \nNotepad++\n\nThrough implication - that you're reading this document - denotes you have a web browser.\n\n\n\n\n\n\nPublication\n\n\nOnce you are happy with your document, and have saved it - you will need to insert it in the navigation tree of the \nReadTheDocs.io\n site.\n\n\n Editing mkdocs.yml\n\n\nOpen the \nmkdocs.yml\n file in the root directory of the repository you cloned.\n\n\nIgnore (don't change) anything above the following:\n\n\npages:\n  - Home: index.md\n  - Drupal: \n    - 'Overview of Drupal at SLAC': 'drupal/drupal-overview.md'\n    - 'Local Development of Drupal': 'drupal/mamp-linux.md'\n    - 'OS-X Development Machine Configuration': 'drupal/grail.md'\n    - 'Communications \n---\n Dev Processes': 'drupal/COMS_GIT.md'\n    - 'Up and Running with SLAC Sites': 'drupal/slac_sites.md'\n  - Core Team:\n    - 'Overview of Drupal for DevOps Team':  'core-team/overview.md'\n    - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'\n    - 'Deployment of Production from Vendor': 'core-team/VENDOR_DEPLOY.md'\n\n\n\n\n\n\nNew Team/Project\n\n\nAssuming you created a new folder (you should have) in the \ndocs\n directory, create a new second level list item:\n\n\n- Core Team:\n    - 'Overview of Drupal for DevOps Team':  'core-team/overview.md'\n    - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'\n    - 'Deployment of Production from Vendor': 'core-team/VENDOR_DEPLOY.md'\n- My New Project:\n    - 'Overview of My New Project': 'new-project/overview.md'\n    - 'Other interesting stuff': 'new-project/other.md'\n\n\n\n\nYou will see that I added \n- My New Project:\n as well as two 'pages' below the second level list item, and indented fours spaces, adding a \n-\n.\n\n\n\n\nNote:\n\n\n\n\nThere is never any reason for creating a top level list item. Please retain the structure already created\n\n\nThe syntax used in the yml or Yaml file can be further understood in \nthis article\n\n\nThis file is very syntax sensitive, so please follow the examples, we suggest cutting and pasting - then editing to suit your update.\n\n\n\n\n\n\nThe structure of the navigation is very simple, yet elegant. The top level list item: \npages\n creates a list object for parsing. Second level items (home, drupal, core-team) are akin to main navigation items - these are subject to re-organization as time progresses and more projects are ported here. \n\n\nThe secondary level items should follow this convention: \n- Section Name :\n\nTertiary level items should follow this convention: \n- 'Subject of SubSection': 'second-level-label/file-name.md'\n\n\nThat's it - the yml file looks intimidating to a non-developer/non-coder, but is very simple and elegant.\n\n\n\n\n\n\nMeta Documentation\n\n\nDocumentation about the Documentation\n\n\nOrganization\n\n\n Repository Structure\n\n\n\n\n\n\nDocumentation Creation and Editing Process\n\n\n Create a document\n\n\n Edit  existing document\n\n\n Rename a document\n\n\n Delete a document\n\n\n\n\n\n\nTools\n\n\nPublication\n\n\n Editing mkdocs.yml\n\n\nNew Team/Project\n\n\nNote:", 
+            "title": "About this Documentation"
+        }, 
+        {
+            "location": "/about/meta/#meta-documentation", 
+            "text": "", 
+            "title": "Meta Documentation"
+        }, 
+        {
+            "location": "/about/meta/#documentation-about-the-documentation", 
+            "text": ":laughing:    This set of documentation exists to promote a transparent and always available set of guides for developing, editing and improving the development of software in OCIO. This documentations' source code is available at\nhttps://github.com/SLAC-OCIO/dev-processes  If you're a member of the SLAC-OCIO Github organization, you can access and edit this documentation. We welcome all pull requests, subject to review.", 
+            "title": "Documentation about the Documentation"
+        }, 
+        {
+            "location": "/about/meta/#organization", 
+            "text": "The documentation set (dset) is organized according to subject. The syntax of the documentation is Markdown, particularly  Github Markdown .   Note:   Location of the code repository:  SLAC OCIO Github    Request Access:  Service Now", 
+            "title": "Organization"
+        }, 
+        {
+            "location": "/about/meta/#repository-structure", 
+            "text": "In the  documentation repository  there is a folder labeled 'Docs'\nThis is the primary folder for storing documentation files. In that folder are several others.  Each folder refers to a high-level topic or team.    - docs    core-team\n        - DRUPAL_UPGRADE_PROCESS.md\n        - VENDOR_DEPLOY.md\n        - VENDOR_PR.md\n        - overview.md   drupal    - COMS_GIT.md  - drupal-overview.md  - grail.md  - mamp-linux.md  - slac_sites.md", 
+            "title": " Repository Structure"
+        }, 
+        {
+            "location": "/about/meta/#documentation-creation-and-editing-process", 
+            "text": "", 
+            "title": "Documentation Creation and Editing Process"
+        }, 
+        {
+            "location": "/about/meta/#create-a-document", 
+            "text": "Clone the repository, locally.  Create a new branch with the appropriate branch name. and switch to it.  If you are adding a new subject, or team, create a new directory in the  docs  folder  If you are adding a new page to the current dset, be sure to create the page in the appropriate folder, and that the file suffix is  .md  and the file is written with proper Markdown syntax.   Once you have finished editing, create a commit message with a summary of your changes and push your changes remotely.", 
+            "title": " Create a document"
+        }, 
+        {
+            "location": "/about/meta/#edit-existing-document", 
+            "text": "If you find mistakes, errors or something missing, you can edit any document in the repository.   Clone the repository, locally.  Create a new branch with the appropriate branch name. and switch to it.  Open the document in your preferred editor.  Make appropriate edits using Markdown syntax.  Save your document  Stage your changes  Commit your changes, with a summary of the changes you made, or the subject you edited.  Push your branch to GitHub  Login to Github, and issue a pull request.", 
+            "title": " Edit  existing document"
+        }, 
+        {
+            "location": "/about/meta/#rename-a-document", 
+            "text": "Generally, the name doesn't matter - since we're using readthedocs.io, the structure is maintained via the yaml file in the root directory of the repository. If you do rename follow the steps in Edit existing document.", 
+            "title": " Rename a document"
+        }, 
+        {
+            "location": "/about/meta/#delete-a-document", 
+            "text": "You can delete documents but it is generally advised to restructure or edit them instead. If documents are deleted that should be there, OCIO-Leads will restore it.", 
+            "title": " Delete a document"
+        }, 
+        {
+            "location": "/about/meta/#tools", 
+            "text": "At the very least the following tools are needed:   git  installed locally   A text editor, in ascii mode.   A modern web browser    Note:   A great Git UI application called  GitKraken  is available.  It has a pleasant and intuitive UI, simplifies most operations and can perform pull request through Github. There is a no-cost version and a pro version.  For assistance with Git installation please see  Githubs Article on Git installation  Most code editors can edit markdown. Popular text editors include  Atom ,  Sublime Text ,  Notepad++ \nThrough implication - that you're reading this document - denotes you have a web browser.", 
+            "title": "Tools"
+        }, 
+        {
+            "location": "/about/meta/#publication", 
+            "text": "Once you are happy with your document, and have saved it - you will need to insert it in the navigation tree of the  ReadTheDocs.io  site.", 
+            "title": "Publication"
+        }, 
+        {
+            "location": "/about/meta/#editing-mkdocsyml", 
+            "text": "Open the  mkdocs.yml  file in the root directory of the repository you cloned.  Ignore (don't change) anything above the following:  pages:\n  - Home: index.md\n  - Drupal: \n    - 'Overview of Drupal at SLAC': 'drupal/drupal-overview.md'\n    - 'Local Development of Drupal': 'drupal/mamp-linux.md'\n    - 'OS-X Development Machine Configuration': 'drupal/grail.md'\n    - 'Communications  ---  Dev Processes': 'drupal/COMS_GIT.md'\n    - 'Up and Running with SLAC Sites': 'drupal/slac_sites.md'\n  - Core Team:\n    - 'Overview of Drupal for DevOps Team':  'core-team/overview.md'\n    - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'\n    - 'Deployment of Production from Vendor': 'core-team/VENDOR_DEPLOY.md'", 
+            "title": " Editing mkdocs.yml"
+        }, 
+        {
+            "location": "/about/meta/#new-teamproject", 
+            "text": "Assuming you created a new folder (you should have) in the  docs  directory, create a new second level list item:  - Core Team:\n    - 'Overview of Drupal for DevOps Team':  'core-team/overview.md'\n    - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'\n    - 'Deployment of Production from Vendor': 'core-team/VENDOR_DEPLOY.md'\n- My New Project:\n    - 'Overview of My New Project': 'new-project/overview.md'\n    - 'Other interesting stuff': 'new-project/other.md'  You will see that I added  - My New Project:  as well as two 'pages' below the second level list item, and indented fours spaces, adding a  - .", 
+            "title": "New Team/Project"
+        }, 
+        {
+            "location": "/about/meta/#note", 
+            "text": "There is never any reason for creating a top level list item. Please retain the structure already created  The syntax used in the yml or Yaml file can be further understood in  this article  This file is very syntax sensitive, so please follow the examples, we suggest cutting and pasting - then editing to suit your update.    The structure of the navigation is very simple, yet elegant. The top level list item:  pages  creates a list object for parsing. Second level items (home, drupal, core-team) are akin to main navigation items - these are subject to re-organization as time progresses and more projects are ported here.   The secondary level items should follow this convention:  - Section Name : \nTertiary level items should follow this convention:  - 'Subject of SubSection': 'second-level-label/file-name.md'  That's it - the yml file looks intimidating to a non-developer/non-coder, but is very simple and elegant.    Meta Documentation  Documentation about the Documentation  Organization   Repository Structure    Documentation Creation and Editing Process   Create a document   Edit  existing document   Rename a document   Delete a document    Tools  Publication   Editing mkdocs.yml  New Team/Project  Note:", 
+            "title": "Note:"
         }, 
         {
             "location": "/drupal/drupal-overview/", 
