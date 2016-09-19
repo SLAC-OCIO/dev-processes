@@ -1,9 +1,11 @@
 Development: SLAC-OCIO and You
-=========
+==================================
 
 [TOC]
 
+
   ##requirements##
+
      - ssh-keys
      - Github account
      - Mac or Linux computer
@@ -116,5 +118,5 @@ Code, Create!, Be happy, Don't forget the semi-colon!
 
 
 TODO:
-- Blurb on Drupal best practices.
-- links to Compass and Susyone docs
+  - Blurb on Drupal best practices.
+  - links to Compass and Susyone docs
