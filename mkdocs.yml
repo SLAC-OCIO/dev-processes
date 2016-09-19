@@ -7,6 +7,8 @@ repo_url: 'https://github.com/SLAC-OCIO/dev-processes'
 include_search: true
 pages:
   - Home: index.md
+  - About: 
+    - 'About this Documentation': 'about/meta.md'
   - Drupal: 
     - 'Overview of Drupal at SLAC': 'drupal/drupal-overview.md'
     - 'Local Development of Drupal': 'drupal/mamp-linux.md'
