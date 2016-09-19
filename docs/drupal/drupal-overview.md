@@ -1,16 +1,18 @@
-#Drupal at SLAC
+Drupal at SLAC
+==================
+
 [SLAC](https://slac.stanford.edu) employs [Drupal](https://drupal.org) as the informational website content management system
 Obtaining Drupal Websites is simple, log in to [Service Now](https://slacprod.service-now.com/navpage.do) and create a ticket from the catalog.
 
-This documentation system provides several groups within SLAC information about Drupal
-###SLAC's Drupal Stack
+This documentation system provides several groups within SLAC, information about Drupal
 
+##SLAC's Drupal Stack##
  - Drupal 7.xx
  - PHP 5.4
  - Apache 2.4
  - Redhat EL 6.5
 
-####Drupal Customizations
+##Drupal Customizations##
 
  - Custom modules written for SLAC are prefixed with `slac_`
  - SLAC's Themes:
@@ -29,9 +31,12 @@ This documentation system provides several groups within SLAC information about 
 		- susyone
 
 
-####Development Tools
+##Development Tools##
+
  
- OS-X
+
+###OS-X###
+
  
  - SLAC-OCIO has created a tool that enables a user to rapidly build the
    necessary infrastructure to develop Drupal locally, that tool is
@@ -50,9 +55,24 @@ This documentation system provides several groups within SLAC information about 
 
 	*MAMP stack: Mac, Apache web server, MySQL database server, PHP text interpreter*
 	
-Linux 
-	- See Mamp Linux
 
- Windows
+###Linux###
+
+ 
+	- See [Lamp Linux](http://slac-ocio-dev-processes.readthedocs.io/en/latest/drupal/mamp-linux/)
+
+###Windows###
+
  
 	 Generally, it is possible to configure windows to develop an *AMP CMS.  However, it is beyond the scope to reliably re-produce the steps necessary. 
+
+###OS Indeopendant Editors:###
+
+> - [Atom](https://atom.io/)  
+> - [Sublime Text](https://www.sublimetext.com/)
+> - [Notepad++](https://notepad-plus-plus.org/)
+> - [PHPStorm](https://www.jetbrains.com/phpstorm/) JetBrains PHPStorm provides a complete inferface to PHPbased programming and debugging,
+
+###MySQL###
+> [Navicat](https://www.navicat.com/) OCIO DevOps team uses Navicat for the management of SQL files and edits. Linux, Windows and Mac
+> [Sequel Pro](https://www.sequelpro.com/) An open source alternative is Sequel Pro

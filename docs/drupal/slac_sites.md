@@ -1,37 +1,40 @@
-## Getting started with Development on SLAC Websites
+Getting started with Development on SLAC Websites
+===========================
 
-### Loading Code as a Project
+## Loading Code as a Project ##
 Open your preferred IDE (PHPStorm, Sublime Text or Atom)
 
 **If using PHPStorm**, chose 'Open' once you load PHPStorm
 
-If you're working on a SLAC site installed via this script, and you used default settings, your sites are located in `/var/sites/sitename`
+>**Note:**
+>If you're working on a SLAC site installed via this script, and you used default settings, your sites are located in `/var/sites/sitename`
 
-Use PHPStorm finder utility to descend directories to `/var/www/slac-features`
+- Use PHPStorm finder utility to descend directories to `/var/www/slac-features`
 
-Select 'Ok' This will load the project into the PHPStorm window. At this point, you're ready to start coding.
+- Select 'Ok' This will load the project into the PHPStorm window. At this point, you're ready to start coding.
 
 Your website should be reachable by loading a browser and entering `http://slac-features/` into the address field. Remember the trailing slash.
 
 **If using Sublime Text** chose File > Open and browse to your directory `/var/sites/slac-features`
 
-Ensuring you have the directory selected, click 'Open'
+- Ensuring you have the directory selected, click 'Open'
 
-Reaching your website is the same for PHPstorm
+- Reaching your website is the same for PHPstorm
 
-### Adding a new site for local development
+## Adding a new site for local development ##
 
-**Codebase**
+###Codebase###
 
 Begin by cloning the repository that contains the repository you're working with. We'll be working with the [SLAC Features](https://github.com/SLAC-OCIO/slac-features.git) codebase
 
-Cloning to the `/var/sites/` directory is recommended.
+> **Note:**
+>  Cloning to the `/var/sites/` directory is recommended.
 
 I'm going to create a site named 'slac-ext' So, the command to clone slac-ext would be: 
 
 `$ git clone https://github.com/SLAC-OCIO/slac-features.git /var/sites/slac-ext`
 
-**Webserver Configuration**
+###Webserver Configuration###
 
 Now we'll setup the necessary local webserver configuration.
 
@@ -65,11 +68,11 @@ Creating a virtualhost for slac-ext...
 http://slac-ext:80/ is set up and ready for use.
 ```
 
-**Database and Site Initialization**
+##Database and Site Initialization##
 
-So far you have retrieved the codebase and configured the local webserver.Next we'll need to setup the database. 
+Thus far you have retrieved the codebase and configured the local webserver. Next,  we'll need to setup the database. 
 
-**Local Sites Settings**
+###Local Sites Settings###
 
 Every Drupal site needs a settings file. This file is called _settings.php_ for single websites it is located in /_sitename_/sites/default/settings.php. 
 
@@ -86,7 +89,7 @@ We'll use slac-features.settings.php. You'll copy this file to your website.
 
 `$ cp /usr/local/grail/roles/slac.grail-slac-sites-build/files/slac-features.settings.php /var/sites/slac-ext/sites/default/settings.php`
 
-**Site Initialization**
+###Site Initialization###
 
 Slac-Features includes some PHP scripts that build slac-features profile - preparing them with default demo content and settings.  
 
@@ -113,6 +116,6 @@ If the build fails, re-run it again.
 
 You will know it has been successful when your browser initializes - either with a new window or new tab, and shows the current site you're building, and logs you in.
 
-### Summary
+## Summary ##
 
 This guide is by no means exhaustive. There are several places that this process can encounter errors. This document is given as a primer, and distributed with a larger package that builds a local development environment, design to get newer and less experienced Drupal Devlopers started.  If you encounter errors, please file an issue on github. 
