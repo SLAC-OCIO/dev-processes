@@ -9,14 +9,21 @@ pages:
   - Home: index.md
   - About: 
     - 'About this Documentation': 'about/meta.md'
+  - External Collaboration:
+    - 'OCIO External Development Processes': 'drupal/COMS_GIT.md'
   - Drupal: 
     - 'Overview of Drupal at SLAC': 'drupal/drupal-overview.md'
     - 'Linux Development Machine Configuration': 'drupal/mamp-linux.md'
     - 'OS-X Development Machine Configuration': 'drupal/grail.md'
-    - 'Communications <---> Dev Processes': 'drupal/COMS_GIT.md'
     - 'Up and Running with SLAC Sites': 'drupal/slac_sites.md'
-  - Core Team:
+  - DevOpsTeam:
     - 'Overview of Drupal for DevOps Team':  'core-team/overview.md'
     - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'
     - 'Deployment of Production from Vendor': 'core-team/VENDOR_DEPLOY.md'
     - 'Drupal Production Site': 'core-team/drupal_prod.md'
+  - Github: 
+    - 'Overview of Github at SLAC': 'github/gh-overview.md'
+    - 'Request Access': 'github/gh-slac-request.md'
+    - 'Teams': 'github/gh-teams.md'
+    - 'Private vs Public Repositories': 'github/gh-priv-pub.md'
+    - 'Gitiquette - CoExGisting': 'github/gh-coexgiting.md'
