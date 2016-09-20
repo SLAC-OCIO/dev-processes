@@ -10,7 +10,7 @@ pages:
   - About: 
     - 'About this Documentation': 'about/meta.md'
   - External Collaboration:
-    - 'OCIO External Development Processes': 'drupal/COMS_GIT.md'
+    - 'OCIO External Development Processes': 'ext-collab/COMS_GIT.md'
   - Drupal: 
     - 'Overview of Drupal at SLAC': 'drupal/drupal-overview.md'
     - 'Linux Development Machine Configuration': 'drupal/mamp-linux.md'
