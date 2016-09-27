@@ -21,6 +21,7 @@ pages:
     - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'
     - 'Deployment of Production from Vendor': 'core-team/VENDOR_DEPLOY.md'
     - 'Drupal Production Site': 'core-team/drupal_prod.md'
+    - 'Docker': 'core-team/docker.md'
   - Github: 
     - 'Overview of Github at SLAC': 'github/gh-overview.md'
     - 'Request Access': 'github/gh-slac-request.md'
