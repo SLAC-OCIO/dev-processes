@@ -1,33 +1,18 @@
-##Upgrading the Drupal Codebase
-1. Clone the repository you’re going to upgrade.
-
-  `git clone git@github.com:slac/slac-features.git`
-2. Create a branch:
-
-  `git checkout -b ‘drupal-7-xx'`
-
-3. Download the newest drupal codebase.
-
-  [drupal.org](http://ftp.drupal.org/files/projects/drupal-7.xx.tar.gz)
-
-4. Extract that archive
-
-  `tar -xvzf drupal-7.xx.tar.gz`
-
+## Upgrading the Drupal Codebase
+1. Clone the repository you’re going to upgrade. `git clone git@github.com:slac/slac-features.git`
+2. Create a branch:  `git checkout -b ‘drupal-7-xx'`
+3. Download the newest drupal codebase from [drupal.org](http://ftp.drupal.org/files/projects/drupal-7.xx.tar.gz)
+4. Extract that archive  `tar -xvzf drupal-7.xx.tar.gz`
 5. Copy the updated code to your drupal codebase
+    ```
+    cd your/drupal/codebase/
+    cp -R your/download/folder/drupal-7.xx/* ./
+    ```
+6. Run database updates In your local siteroot (/var/sites/slac-www/): `drush updb`
 
-```
-cd your/drupal/codebase/
-cp -R your/download/folder/drupal-7.xx/* ./
-```
-6. Run database updates
+  Some things may give warnings - if the whole process does not return the words ‘Upgrade Successful’, abandon and consult with the team.
 
-In your local siteroot (/var/sites/slac-www/): `drush updb`
-
-Some things may give warnings - if the whole process does not return the words ‘Upgrade Successful’, abandon and consult with the
-team.
-
-###Test Locally.
+### Test Locally.
 
 Open the site locally on your dev machine.
   - Visit each path in the main menu looking for broken links.
@@ -40,14 +25,13 @@ Open the site locally on your dev machine.
 
 1. Add the changed files:
 
-`git add CHANGELOG.txt INSTALL.mysql.txt MAINTAINERS.txt README.txt includes misc modules profiles scripts themes
-COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config`
+    ```
+    git add CHANGELOG.txt INSTALL.mysql.txt MAINTAINERS.txt README.txt includes misc modules profiles scripts themes COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config
+    ```
 
-2. Commit your changes:
-`git commit -m ‘Upgrade to Drupal 7.xx'`
+2. Commit your changes: `git commit -m ‘Upgrade to Drupal 7.xx'`
 
-3. Push your branch to github:
-`git push origin ‘drupal-7-xx'`
+3. Push your branch to github: `git push origin ‘drupal-7-xx'`
 
 ### Deploying an Upgraded Drupal Codebase
 1. Login to github with your credentials
@@ -86,7 +70,7 @@ COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config`
 
 Test the sites to ensure they are functioning properly. Request the relevant clients run tests.
 
-###Change Order
+### Change Order
 If the site you are upgrading is www6 or intranet a change order is necessary.
 
 1. Log into Service Now and click on the 'Change' menu.
@@ -103,7 +87,7 @@ If the site you are upgrading is www6 or intranet a change order is necessary.
   - Click 'Request Approval'
 
 ------------------------
-##Upgrading the Drupal and associated modules
+## Upgrading the Drupal and associated modules
 
 1. Clone the repository you’re going to upgrade.
 
@@ -124,7 +108,7 @@ In your local siteroot (/var/sites/slac-www/): `drush updb`
 Some things may give warnings - if the whole process does not return the words ‘Upgrade Successful’, abandon and consult with the
 team.
 
-###Test Locally.
+### Test Locally.
 
 Open the site locally on your dev machine.
   - Visit each path in the main menu looking for broken links.
@@ -137,8 +121,10 @@ Open the site locally on your dev machine.
 
 1. Add the changed files:
 
-`git add CHANGELOG.txt INSTALL.mysql.txt MAINTAINERS.txt README.txt includes misc modules profiles scripts themes
-COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config`
+```
+git add CHANGELOG.txt INSTALL.mysql.txt MAINTAINERS.txt README.txt includes misc modules profiles scripts themes
+COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config
+```
 
 2. Commit your changes:
 `git commit -m ‘Upgrade to Drupal 7.xx'`
@@ -146,7 +132,7 @@ COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config`
 3. Push your branch to github:
 `git push origin ‘drupal-7-xx'`
 
-### Deploying an Upgraded Drupal Codebase
+### Deploying an Upgraded Drupal Codebase and Modules
 1. Login to github with your credentials
   - Locate the repository you are going to deploy.
   - Copy the github URL.
@@ -166,7 +152,7 @@ COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config`
 5. Authorize the Merge
   - Click the merge branches button
 
-6. log into drupal-admin01 and sudo as aegir
+6. log into `drupal-admin01.slac.stanford.edu` and sudo as aegir
   - `sudo su -i aegir`
 
 7. Change to the platform you will deploy on.
@@ -179,11 +165,12 @@ COPYRIGHT.txt INSTALL.txt robots.txt update.php web.config`
   - Verify
   - Locate any sites attached to that platform
   - verify all of them.
+
 **You’re Done**
 
 Test the sites to ensure they are functioning properly. Request the relevant clients run tests.
 
-###Change Order
+### Change Order
 If the site you are upgrading is www6 or intranet a change order is necessary.
 
 1. Log into Service Now and click on the 'Change' menu.
@@ -200,7 +187,7 @@ If the site you are upgrading is www6 or intranet a change order is necessary.
   - Click 'Request Approval'
 
 
-###issues
+### issues
 
 If the sites will not verify correctly then database updates will need to be ran.
 
@@ -208,4 +195,4 @@ If the sites will not verify correctly then database updates will need to be ran
 2. Select all of the sites in the appropriate platform
 3. Select from the select menu for multiple sites: Update database
 4. Wait for each sites database update to complete
-5. Re-Verify each site.  Platoform re-verification is not needed
+5. Re-Verify each site.  Platform re-verification is not needed
