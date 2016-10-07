@@ -1,8 +1,12 @@
 ## Upgrading the Drupal Codebase
 1. Clone the repository you’re going to upgrade. `git clone git@github.com:slac/slac-features.git`
+
 2. Create a branch:  `git checkout -b ‘drupal-7-xx'`
+
 3. Download the newest drupal codebase from [drupal.org](http://ftp.drupal.org/files/projects/drupal-7.xx.tar.gz)
+
 4. Extract that archive  `tar -xvzf drupal-7.xx.tar.gz`
+
 5. Copy the updated code to your drupal codebase
     ```
     cd your/drupal/codebase/
@@ -66,6 +70,7 @@ Open the site locally on your dev machine.
   - Verify
   - Locate any sites attached to that platform
   - verify all of them.
+  
 **You’re Done**
 
 Test the sites to ensure they are functioning properly. Request the relevant clients run tests.
