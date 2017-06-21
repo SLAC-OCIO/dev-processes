@@ -16,6 +16,8 @@ pages:
     - 'Linux Development Machine Configuration': 'drupal/mamp-linux.md'
     - 'OS-X Development Machine Configuration': 'drupal/grail.md'
     - 'Up and Running with SLAC Sites': 'drupal/slac_sites.md'
+  - Aegir:
+    - 'Management of Aegir': 'aegir/management.md'
   - DevOpsTeam:
     - 'Overview of Drupal for DevOps Team':  'core-team/overview.md'
     - 'Deployment of Vendor Pull Request': 'core-team/VENDOR_PR.md'
